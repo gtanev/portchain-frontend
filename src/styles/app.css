@@ -1,0 +1,50 @@
+.app {
+  height: 100vh;
+}
+
+.nav-grid {
+  background-image: url('/portchain.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.info-grid {
+  background-color: #56839c;
+  background-image: linear-gradient(to right, white, #56839c);
+  overflow: hidden;
+}
+
+.error-grid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.info-table-grid,
+.info-charts-grid {
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.info-charts-grid {
+  height: 100%;
+  padding-left: 0;
+}
+
+.info-table {
+  overflow: auto;
+}
+
+.info-table-detail {
+  padding: 0 6px 12px 6px;
+}
+
+.info-heading,
+.info-table-heading,
+.recharts-cartesian-axis-tick {
+  font-family: 'Candara', sans-serif !important;
+  font-size: large;
+  font-style: italic;
+}
