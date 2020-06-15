@@ -9,7 +9,7 @@ function PortsInfo() {
       fetchCallback={actions.fetchPortData}
       tableColumns={['ID', 'Name', 'Port Calls']}
       tableDetailProp={'portCallDurations'}
-      tableDetailText={'<b>Port call durations</b>'}
+      tableDetailText={'<b>Port call durations</b> (h)'}
     />
   );
 }

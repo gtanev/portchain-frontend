@@ -38,7 +38,7 @@ function InfoTable({ columns, data, detailProp, detailText }) {
           percentiles = [];
 
         row[detailProp].forEach(p => {
-          titles.push(`<b>${p['days']} day delays<b/>`);
+          titles.push(`<b>${p['days']} day forecast delays<b/> (h)`);
           percentiles.push(p['percentiles']);
         });
 
