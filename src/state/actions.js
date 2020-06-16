@@ -2,7 +2,7 @@ import { fetchPorts, fetchVessels } from '../services/backend';
 
 const fetchPortData = (state, dispatch) => {
   Promise.all([
-    fetchPorts({ sortKey: 'name', durationPerc: stringify([5, 20, 50, 75, 90]) }),
+    fetchPorts({ durationPerc: stringify([5, 20, 50, 75, 90]) }),
     fetchPorts({ limit: 5, sortKey: 'portCalls', sortDir: 'desc' }),
     fetchPorts({ limit: 5, sortKey: 'portCalls', sortDir: 'asc' }),
   ])
@@ -27,7 +27,8 @@ const fetchPortData = (state, dispatch) => {
 const fetchVesselData = (state, dispatch) => {
   Promise.all([
     fetchVessels({
-      sortKey: 'name', delayDays: stringify([2, 7, 14]), delayPerc: stringify([5, 50, 80]),
+      delayDays: stringify([2, 7, 14]),
+      delayPerc: stringify([5, 50, 80]),
     }),
     fetchVessels({ limit: 5, sortKey: 'portCalls', sortDir: 'desc' }),
     fetchVessels({ limit: 5, sortKey: 'portCalls', sortDir: 'asc' }),

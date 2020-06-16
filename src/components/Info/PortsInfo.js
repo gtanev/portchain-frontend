@@ -7,7 +7,11 @@ function PortsInfo() {
     <Info
       dataKey={'ports'}
       fetchCallback={actions.fetchPortData}
-      tableColumns={['ID', 'Name', 'Port Calls']}
+      tableColumns={[
+        { field: 'id', label: 'ID' },
+        { field: 'name', label: 'Name' },
+        { field: 'portCalls', label: 'Port Calls' },
+      ]}
       tableDetailProp={'portCallDurations'}
       tableDetailText={'<b>Port call durations</b> (h)'}
     />

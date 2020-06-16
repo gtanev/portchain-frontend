@@ -48,3 +48,9 @@
   font-size: large;
   font-style: italic;
 }
+
+.MuiTableSortLabel-icon {
+  filter: invert();
+  padding-left: 6px;
+  padding-right: 6px;
+}
