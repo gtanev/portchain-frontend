@@ -20,7 +20,6 @@ const HeaderCell = withStyles(theme => ({
     backgroundColor: themeColors.primary,
     color: theme.palette.common.white,
     fontSize: 18,
-    fontWeight: 'bold',
     paddingTop: 12,
     paddingBottom: 12,
   },

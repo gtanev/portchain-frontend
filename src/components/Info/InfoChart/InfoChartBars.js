@@ -9,8 +9,8 @@ import { themeColors } from '../../../constants/constants';
 const headingPaperStyle = {
   padding: '0 24px',
   marginBottom: 12,
-  backgroundColor: 'white',
-  color: themeColors.primary,
+  backgroundColor: themeColors.primary,
+  color: 'white',
 };
 
 function InfoChartBars({ data, yAxisKey, xAxisKey, title, style }) {
