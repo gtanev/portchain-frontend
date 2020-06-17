@@ -21,12 +21,12 @@ const toHoursAndMinutes = value => {
   return `${hours}h ${minutes}m`;
 };
 
-function InfoChartAreaContent({ data, xAxisKey, yAxisKey, height }) {
+function InfoChartAreaContent({ data, xAxisKey, yAxisKey, xAxisInterval, height }) {
   return (
     <ResponsiveContainer width="100%" height={height}>
       <AreaChart data={data} margin={{ top: 6, right: 24, left: 0, bottom: 3 }}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey={xAxisKey} tickFormatter={toPercent} />
+        <XAxis dataKey={xAxisKey} tickFormatter={toPercent} interval={xAxisInterval || 0} />
         <YAxis />
         <Tooltip formatter={toHoursAndMinutes} labelFormatter={toPercentile} />
         {yAxisKey.map((dataKey, index) => (

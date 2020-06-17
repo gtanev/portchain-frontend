@@ -25,6 +25,7 @@ function InfoChartArea({ data, yAxisKey, xAxisKey, title, style }) {
         data={data}
         yAxisKey={yAxisKey}
         xAxisKey={xAxisKey}
+        xAxisInterval={3}
         height={chartHeight}
       />
     </Grid>
