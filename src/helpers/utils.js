@@ -11,3 +11,10 @@ export const stableSort = (array, sortKey, sortDir) => {
     return 0;
   }
 };
+
+export const stringify = array => JSON.stringify(array).slice(1, -1);
+
+export const range = (start, end, step = 1) => {
+  const length = Math.floor((end - start) / step) + 1;
+  return Array.from({ length }, (_, i) => start + i * step);
+};

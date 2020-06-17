@@ -1,8 +1,9 @@
 import { fetchPorts, fetchVessels } from '../services/backend';
+import { range, stringify } from '../helpers/utils';
 
 const fetchPortData = (state, dispatch) => {
   Promise.all([
-    fetchPorts({ durationPerc: stringify([5, 20, 50, 75, 90]) }),
+    fetchPorts({ durationPerc: stringify(range(0, 100, 5)) }),
     fetchPorts({ limit: 5, sortKey: 'portCalls', sortDir: 'desc' }),
     fetchPorts({ limit: 5, sortKey: 'portCalls', sortDir: 'asc' }),
   ])
@@ -28,7 +29,7 @@ const fetchVesselData = (state, dispatch) => {
   Promise.all([
     fetchVessels({
       delayDays: stringify([2, 7, 14]),
-      delayPerc: stringify([5, 50, 80]),
+      delayPerc: stringify(range(0, 100, 5)),
     }),
     fetchVessels({ limit: 5, sortKey: 'portCalls', sortDir: 'desc' }),
     fetchVessels({ limit: 5, sortKey: 'portCalls', sortDir: 'asc' }),
@@ -51,8 +52,5 @@ const fetchVesselData = (state, dispatch) => {
     );
 };
 
-function stringify(array) {
-  return JSON.stringify(array).slice(1, -1);
-}
 
 export default { fetchPortData, fetchVesselData };
