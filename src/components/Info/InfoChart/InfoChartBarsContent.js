@@ -22,7 +22,7 @@ function InfoChartBarsContent({ data, xAxisKey, yAxisKey, height }) {
   const CustomLabel = props => {
     return (
       <Label
-        style={{ textShadow: '1px 1px 2px '.concat(fillColor) }}
+        className="info-chart-bars-label"
         value={String(props.value).toUpperCase()}
         position={props.position}
         fill={textColor}
