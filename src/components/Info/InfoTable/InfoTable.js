@@ -7,7 +7,6 @@ import TableRow from '@material-ui/core/TableRow';
 import { InfoTableRow } from './InfoTableRow';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
-import { Paper } from '@material-ui/core';
 import { themeColors } from '../../../constants/constants';
 import { infoTableRowDetail } from './InfoTableRowDetail';
 import isEqual from 'react-fast-compare';
@@ -104,7 +103,7 @@ function InfoTable({ columns, data, detailProp, detailText }) {
               ))}
           </TableRow>
         </TableHead>
-        <TableBody component={Paper}>
+        <TableBody>
           {data && stableSort(data, sortParams.sortKey, sortParams.sortDir).map(renderRow)}
         </TableBody>
       </Table>

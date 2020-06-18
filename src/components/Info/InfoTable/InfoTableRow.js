@@ -15,6 +15,7 @@ const useRowStyles = makeStyles({
     },
   },
   body: {
+    fontSize: 15,
     paddingTop: 9,
     paddingBottom: 9,
   },
@@ -23,12 +24,15 @@ const useRowStyles = makeStyles({
 export function InfoTableRow({ row, detail }) {
   const [open, setOpen] = React.useState(false);
   const classes = useRowStyles();
+  const backgroundStyle = {
+    backgroundColor: open ? 'rgb(255, 255, 255)' : 'rgba(255, 255, 255, 0.8)',
+  };
 
   if (!row) return null;
 
   return (
     <React.Fragment>
-      <TableRow className={classes.root}>
+      <TableRow className={classes.root} style={backgroundStyle}>
         <TableCell className={classes.body}>
           <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
@@ -40,7 +44,7 @@ export function InfoTableRow({ row, detail }) {
           </TableCell>
         ))}
       </TableRow>
-      <TableRow>
+      <TableRow style={backgroundStyle}>
         <TableCell
           style={{ paddingBottom: 0, paddingTop: 0 }}
           colSpan={Object.keys(row).length + 1}

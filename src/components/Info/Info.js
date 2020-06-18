@@ -33,7 +33,7 @@ function Info({ fetchCallback, dataKey, tableColumns, tableDetailProp, tableDeta
           </PerfectScrollbar>
         ) : null}
       </Grid>
-      <Grid container item xs={12} md={4} className="info-charts-grid" alignItems="center">
+      <Grid container item xs={12} md={4} className="info-charts-grid" alignItems="flex-start">
         {state.data[dataKey].topFive.length ? (
           <InfoChartBars
             data={state.data[dataKey].topFive}

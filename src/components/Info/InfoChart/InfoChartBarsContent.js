@@ -26,7 +26,7 @@ function InfoChartBarsContent({ data, xAxisKey, yAxisKey, height }) {
         value={String(props.value).toUpperCase()}
         position={props.position}
         fill={textColor}
-        viewBox={props.viewBox}
+        viewBox={{ ...props.viewBox, x: props.viewBox.x + 3 }}
       />
     );
   };

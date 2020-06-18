@@ -10,7 +10,9 @@
 
 .info-grid {
   background-color: #56839c;
-  background-image: linear-gradient(to right, white, #56839c);
+  background-image: url('/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
 }
 
@@ -24,12 +26,11 @@
 .info-table-grid,
 .info-charts-grid {
   max-height: 100%;
-  overflow-y: auto;
-  padding: 24px;
+  overflow: hidden;
+  padding: 42px;
 }
 
 .info-charts-grid {
-  height: 100%;
   padding-left: 0;
 }
 

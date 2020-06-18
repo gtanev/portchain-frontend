@@ -24,7 +24,7 @@ function InfoChartBars({ data, yAxisKey, xAxisKey, title, style }) {
   const computeChartHeight = () => {
     let infoGridHeight = document.getElementById('infoGrid').offsetHeight;
     let infoHeadHeight = document.getElementById('infoHead').offsetHeight;
-    setChartHeight(infoGridHeight / 2 - infoHeadHeight - 2 * 24);
+    setChartHeight(infoGridHeight / 2 - infoHeadHeight - 2.5 * 24);
   };
 
   return (
