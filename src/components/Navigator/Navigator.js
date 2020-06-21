@@ -7,13 +7,15 @@ import AnchorIcon from 'mdi-material-ui/Anchor';
 function Navigator(props) {
   const [selected, setSelected] = React.useState('PORTS');
 
-  const handleTabChange = (event, newValue) => setSelected(newValue);
-  const handleViewChange = () => props.setView(selected);
+  const handleTabChange = (event, value) => {
+    setSelected(value);
+    props.setView(value);
+  };
 
   return (
     <Tabs value={selected} onChange={handleTabChange} indicatorColor="primary" textColor="primary">
-      <Tab icon={<AnchorIcon />} label="Ports" value="PORTS" onAnimationStart={handleViewChange} />
-      <Tab icon={<ShipIcon />} label="Vessels" value="VESSELS" onAnimationStart={handleViewChange} />
+      <Tab icon={<AnchorIcon />} label="Ports" value="PORTS" />
+      <Tab icon={<ShipIcon />} label="Vessels" value="VESSELS" />
     </Tabs>
   );
 }
