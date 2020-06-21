@@ -21,13 +21,13 @@ function InfoChartArea({ data, yAxisKey, xAxisKey, title, style }) {
         callback={!chartHeight && computeChartHeight}
         color={themeColors.secondary}
       />
-      <InfoChartAreaContent
+      {!!chartHeight && (<InfoChartAreaContent
         data={data}
         yAxisKey={yAxisKey}
         xAxisKey={xAxisKey}
         xAxisInterval={3}
         height={chartHeight}
-      />
+      />)}
     </Grid>
   );
 }

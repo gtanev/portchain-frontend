@@ -47,7 +47,7 @@ function InfoChartAreaContent({ data, xAxisKey, yAxisKey, xAxisInterval, height 
             stackId={1}
             type="monotone"
             dataKey={dataKey}
-            stroke={fillColors[index]}
+            stroke="none"
             fill={fillColors[index]}
           />
         ))}
