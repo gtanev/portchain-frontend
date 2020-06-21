@@ -21,6 +21,13 @@ const toHoursAndMinutes = value => {
   return `${hours}h ${minutes}m`;
 };
 
+const addAbsoluteToRelative = (value, label, object) => {
+  if (label === 'relative' && object.payload.hasOwnProperty('absolute')) {
+    return value + object.payload.absolute;
+  }
+  return value;
+};
+
 function InfoChartAreaContent({ data, xAxisKey, yAxisKey, xAxisInterval, height }) {
   return (
     <ResponsiveContainer width="100%" height={height}>
@@ -28,10 +35,16 @@ function InfoChartAreaContent({ data, xAxisKey, yAxisKey, xAxisInterval, height 
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey={xAxisKey} tickFormatter={toPercent} interval={xAxisInterval || 0} />
         <YAxis />
-        <Tooltip formatter={toHoursAndMinutes} labelFormatter={toPercentile} />
+        <Tooltip
+          formatter={(value, label, object) =>
+            toHoursAndMinutes(addAbsoluteToRelative(value, label, object))
+          }
+          labelFormatter={toPercentile}
+        />
         {yAxisKey.map((dataKey, index) => (
           <Area
             key={dataKey}
+            stackId={1}
             type="monotone"
             dataKey={dataKey}
             stroke={fillColors[index]}

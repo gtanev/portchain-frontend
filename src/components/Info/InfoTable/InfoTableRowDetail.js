@@ -10,7 +10,7 @@ export function infoTableRowDetail(details, title) {
       data.push({
         percentile: point,
         absolute: details.absolute[point],
-        relative: details.relative[point],
+        relative: details.relative[point] - details.absolute[point],
       })
     );
     yAxisKey = ['absolute', 'relative'];
